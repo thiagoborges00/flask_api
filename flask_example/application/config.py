@@ -2,6 +2,7 @@ import os
 from dynaconf import FlaskDynaconf
 
 here = os.path.dirname(os.path.abspath(__file__))
+#pasta atual do arquivo .toml
 
 #para não acontecer o import circular
 # vai habilitar o settings.toml
