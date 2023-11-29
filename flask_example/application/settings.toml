@@ -2,5 +2,6 @@
 mongo_uri = "mongodb://127.0.0.1:27017/blog"
 title = "App Blog"
 extensions = [
-    "application.database:configure"
+    "application.database:configure",
+    "application.commands:configure",
 ]

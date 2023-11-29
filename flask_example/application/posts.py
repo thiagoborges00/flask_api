@@ -1,5 +1,6 @@
 from application.database import mongo
 from datetime import datetime
+import pymongo
 
 
 def get_all_posts(published: bool = True):
@@ -35,8 +36,10 @@ def new_post(title: str, content: str, published: bool = True) -> str:
             "date_created": datetime.now(),
 
         })
+    except pymongo.errors.ServerSelectionTimeoutError:
+        return 'connection error, maybe you might connect mongodb .'
     except Exception as e:
-        print(e)
+        print(type(e))
 
     return slug
 
