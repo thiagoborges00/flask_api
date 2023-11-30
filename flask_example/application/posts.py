@@ -9,15 +9,16 @@ def get_all_posts(published: bool = True):
 
 
 def get_post_by_slug(slug: str) -> dict:
-    '''retorna uma postou uma None'''
-    post = mongo.db.blog.posts.find_one({"slug": slug})
+    '''Dado um slug retorna um post ou  None'''
+    post = mongo.db.posts.find_one({"slug": slug})
     return post
 
 
 def update_post_by_slug(slug: str,data: dict) -> dict:
     #TODO se o titulo mudar alterar o slug tbm
     
-    return mongo.db.posts.find_one_and_update({"slug":slug}, {"$set": data})
+    return mongo.db.posts.find_one_and_update({"slug":slug},
+                                               {"$set": {"content":data.get("content"),"published":data.get("published")}})
 
 
 def new_post(title: str, content: str, published: bool = True) -> str:

@@ -26,3 +26,35 @@ def novo_post(title, content):
         return False
     newest_post = new_post(title=title, content=content)
     click.echo(f"New post Created!\n Slug: {newest_post}") 
+
+@posts.command()
+@click.argument("slug")
+def lista_post_slug(slug):
+    '''List one post by slug'''
+
+    if not slug:
+        click.echo(message="Type slug ...\n")
+        return False
+    post = get_post_by_slug(slug=slug)
+    if post is None:
+        click.echo("Post inexistent .. ")
+        return False
+    click.echo(post)
+
+@posts.command()
+@click.argument("slug")
+@click.option("--content", default=None, type=str)
+@click.option("--published", default='true', type=str)
+def update(slug, content, published):
+    '''Update post by slug'''
+    if not content or not published:
+        click.echo("Type something ...")
+        return False
+    
+    data={
+        "content": content,
+        "published": published
+    }
+    post = update_post_by_slug(slug=slug, data=data)
+
+    click.echo(f"Post updated, {post}, {data},{slug}\n")
