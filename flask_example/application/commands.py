@@ -46,15 +46,15 @@ def lista_post_slug(slug):
 @click.option("--content", default=None, type=str)
 @click.option("--published", default='true', type=str)
 def update(slug, content, published):
-    '''Update post by slug'''
+    '''Update post by slug. Ex.
+    flask posts update slug-do-post --title "ja morant" --content "heartless"'''
+    data = {}
     if not content or not published:
         click.echo("Type something ...")
         return False
     
-    data={
-        "content": content,
-        "published": published
-    }
+    data["content"]= content,
+    data["published"]= published.lower()
+    
     post = update_post_by_slug(slug=slug, data=data)
-
     click.echo(f"Post updated, {post}, {data},{slug}\n")
