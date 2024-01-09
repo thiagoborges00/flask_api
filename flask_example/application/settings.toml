@@ -4,4 +4,6 @@ title = "App Blog"
 extensions = [
     "application.database:configure",
     "application.commands:configure",
+    "flask_bootstrap:Bootstrap",
+    "application.views:configure",
 ]

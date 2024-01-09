@@ -5,7 +5,7 @@ import pymongo
 
 def get_all_posts(published: bool = True):
     
-    return list(mongo.db.blog.posts.find({"published":published}))
+    return list(mongo.db.posts.find({"published":published}))
 
 
 def get_post_by_slug(slug: str) -> dict:
