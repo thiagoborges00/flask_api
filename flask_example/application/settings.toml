@@ -6,4 +6,6 @@ extensions = [
     "application.commands:configure",
     "flask_bootstrap:Bootstrap",
     "application.views:configure",
+    "application.plugins:configure",
+
 ]

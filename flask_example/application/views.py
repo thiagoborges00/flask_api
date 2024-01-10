@@ -22,6 +22,15 @@ def detail(slug):
     
     return render_template("post.html.j2", post=post)
 
+@bp.route("/new",methods=['GET','POST'])
+def new():
+    if request.method=='POST':
+        title = request.form.get("title")
+        content = request.form.get("content")
+        slug = new_post(content=content,title=title)
+        return redirect(url_for('posts.detail',slug=slug))
+    return render_template("form.html.j2")
+
 
 
 #registra a blueprint

@@ -2,12 +2,12 @@
 {% block content %}
 
 <div class="container">
-    <h1>{{config.get('TITLE')}}</h1>
+    <h1>{{config.get('TITLE') | title}}</h1>
     <div class="jumbotron">
         <ul class="list-group">
             {% for post in posts %}
             <li class="list-group-item">
-                <a href="{{url_for('posts.detail',slug=post.slug)}}"> {{post.title}} </a>
+                <a href="{{url_for('posts.detail',slug=post.slug)}}"> {{post.title | title}} </a>
             </li>
             {% endfor %}
         </ul>
