@@ -5,5 +5,5 @@ setup(
     version="0.1.0",
     packages=['application'],
     author="th",
-    install_requires=["flask","flask-pymongo","dynaconf","flask-bootstrap"]
+    install_requires=["flask","flask-pymongo","dynaconf","flask-bootstrap","mistune",]
 )
