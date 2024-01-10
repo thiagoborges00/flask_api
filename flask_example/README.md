@@ -7,6 +7,7 @@ no framework flask
 - iniciar uma instancia do mongo-db e colocar a url  no arquivo settings.toml
 pra aplicacao ter comunicacao com o banco
 
+- instalar as dependencias ``pip install -e .`` na pasta onde tá o setup.py 
 - iniciar a aplicação WEB com o comando:
  flask run  (na pasta onde tá o arquivo app.py, que é a raiz do projeto) 
 
@@ -23,3 +24,11 @@ LISTAGEM  -> flask posts lista-post-slug slug-do-post
 ADD       -> flask posts novo-post --title "coruja azul" --content "hoje a coruja dormiu"
 
 UPDATE    -> flask posts update slug-do-post --title "ja morant" --content "heartless"
+
+
+## Dependencias
+
+- flask_pymongo   . Integração com o banco.
+- dynaconf        . Gerência das configurações do projeto.
+- flask_bootstrap . Pra dar um tapa no vizual.
+- mistune         . Transforma texto em html.

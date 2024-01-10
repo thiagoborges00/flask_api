@@ -1,0 +1,18 @@
+-e git+https://github.com/thiagoborges00/flask_api.git@20c4728c1110b17dd29bb06c5ed08f7c75d2e8b0#egg=application_Flask_blog&subdirectory=flask_example
+blinker==1.6.2
+click==8.1.7
+dnspython==2.4.2
+dominate==2.9.1
+dynaconf==3.2.3
+Flask==2.3.3
+Flask-Bootstrap==3.3.7.1
+Flask-PyMongo==2.3.0
+importlib-metadata==6.8.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+mistune==3.0.2
+pymongo==4.5.0
+visitor==0.1.3
+Werkzeug==2.3.7
+zipp==3.17.0
